@@ -42,6 +42,7 @@ int main()
     }
     else if (odpowiedz != 1 && odpowiedz != 2)
     {
+        printf("Brak odpowiedzi.\n");
         return 0;
     }
     return 0;
