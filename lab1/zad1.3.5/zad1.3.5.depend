@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1614604780 source:c:\github\programowanie strukturalne\ps-gr3-zarnochartur\lab1\zad1.3.5\main.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+
