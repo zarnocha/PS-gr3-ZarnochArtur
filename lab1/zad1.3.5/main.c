@@ -13,6 +13,7 @@ int main()
     printf("Jesli chcesz obliczyc pole trojkata z jego bokow wpisz 2.\n");
     printf("Odpowiedz: ");
     scanf("%d", &odpowiedz);
+
     if(odpowiedz == 1)
     {
         int podstawa;
