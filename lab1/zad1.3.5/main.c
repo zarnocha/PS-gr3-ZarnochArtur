@@ -26,20 +26,54 @@ int main()
     }
     else if(odpowiedz == 2)
     {
-        int bok1;
-        int bok2;
-        int bok3;
+
+        float a;
+        float b;
+        float c;
+
         printf("\nProsze podac pierwszy bok trojkata: ");
-        scanf("%d", &bok1);
+        scanf("%f", &a);
         printf("\nProsze podac drugi bok trojkata: ");
-        scanf("%d", &bok2);
+        scanf("%f", &b);
         printf("\nProsze podac trzeci bok trojkata: ");
-        scanf("%d", &bok3);
-        int polowa_obwodu = (bok1+bok2+bok3)/2;
-        int pole_do_pierw = polowa_obwodu*(polowa_obwodu-bok1)*(polowa_obwodu-bok2)*(polowa_obwodu-bok3);
-        float pole = sqrt(pole_do_pierw);
-        printf("\nPole tego trojkata wynosi: %0.1f\n", pole);
+        scanf("%f", &c);
+
+        float najdluzszy;
+        //Aby z trzech odcinków zbudowaæ trójk¹t, najd³u¿szy z nich musi byæ krótszy ni¿ suma d³ugoœæ dwóch pozosta³ych.
+        if(a>b && a>c)
+        {
+            najdluzszy = a;
+        }
+        else if(b > a && b > c)
+        {
+            najdluzszy = b;
+        }
+        else if(c > a && c > b)
+        {
+            najdluzszy = c;
+        }
+        if(najdluzszy == a && najdluzszy > b+c)
+        {
+            printf("\nTen trojkat nie istnieje. \n");
+            return 0;
+        }
+        else if(najdluzszy == b && najdluzszy > a+c)
+        {
+            printf("\nTen trojkat nie istnieje. \n");
+            return 0;
+        }
+        else if(najdluzszy == c && najdluzszy > a+b)
+        {
+            printf("\nTen trojkat nie istnieje. \n");
+            return 0;
+        }
+
+        float p = ((a+b+c)/2);
+        float pole_p = (p*((p-a)*(p-b)*(p-c)));
+        float pole = (sqrt(pole_p));
+        printf("\nPole: %f", pole);
     }
+
     else if (odpowiedz != 1 && odpowiedz != 2)
     {
         printf("Brak odpowiedzi.\n");
