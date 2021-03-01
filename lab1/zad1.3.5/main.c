@@ -37,8 +37,8 @@ int main()
         scanf("%d", &bok3);
         int polowa_obwodu = (bok1+bok2+bok3)/2;
         int pole_do_pierw = polowa_obwodu*(polowa_obwodu-bok1)*(polowa_obwodu-bok2)*(polowa_obwodu-bok3);
-        int pole = sqrt(pole_do_pierw);
-        printf("\nPole tego trojkata wynosi: %d\n", pole);
+        float pole = sqrt(pole_do_pierw);
+        printf("\nPole tego trojkata wynosi: %0.1f\n", pole);
     }
     else if (odpowiedz != 1 && odpowiedz != 2)
     {
