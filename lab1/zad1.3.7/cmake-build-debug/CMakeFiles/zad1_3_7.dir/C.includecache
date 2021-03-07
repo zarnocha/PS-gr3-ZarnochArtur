@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/GitHub/Programowanie strukturalne/PS-gr3-ZarnochArtur/lab1/zad1.3.7/main.c
+stdio.h
+-
+math.h
+-
+

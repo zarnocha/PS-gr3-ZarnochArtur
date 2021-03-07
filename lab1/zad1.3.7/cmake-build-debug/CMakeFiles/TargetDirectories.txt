@@ -1,0 +1,3 @@
+C:/GitHub/Programowanie strukturalne/PS-gr3-ZarnochArtur/lab1/zad1.3.7/cmake-build-debug/CMakeFiles/zad1_3_7.dir
+C:/GitHub/Programowanie strukturalne/PS-gr3-ZarnochArtur/lab1/zad1.3.7/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/GitHub/Programowanie strukturalne/PS-gr3-ZarnochArtur/lab1/zad1.3.7/cmake-build-debug/CMakeFiles/rebuild_cache.dir
