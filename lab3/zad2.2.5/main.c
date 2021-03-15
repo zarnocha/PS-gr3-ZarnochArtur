@@ -1,16 +1,40 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int potegowanie(int n)
+int abs(int a)
 {
-    int zmienna = n;
-    int wynik = 1;
+    if(a<0)
+    {
+        return a*(-1);
+    }
+    else return a;
+}
+
+float potegowanie(int n)
+{
+    int zmienna;
+
+    if(n<0)
+    {
+        zmienna = abs(n);
+    }
+    else
+    {
+        zmienna = n;
+    }
+    float wynik = 1;
+
     while(zmienna>0)
     {
         wynik *= 2;
         zmienna--;
     }
-    return wynik;
+    if(n<0)
+    {
+        return 1/wynik;
+    }
+    else return wynik;
+
 }
 
 int main()
@@ -18,7 +42,7 @@ int main()
     int n;
     printf("Podaj liczbe calkowita n: ");
     scanf("%d",&n);
-    int k = potegowanie(n);
-    printf("2^%d = %d",n,k);
+    float k = potegowanie(n);
+    printf("2^%d = %f",n,k);
     return 0;
 }
