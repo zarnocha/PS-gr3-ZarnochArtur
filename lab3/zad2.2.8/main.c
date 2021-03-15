@@ -18,6 +18,7 @@ int main()
     int n;
     printf("Podaj liczbe dodatnia n: ");
     scanf("%d",&n);
+    if(n < 0) return -1;
     int k = pierwiastek(n);
     printf("Pierwiastek z %d = %d",n,k);
     return 0;
