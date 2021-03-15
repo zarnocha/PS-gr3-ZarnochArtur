@@ -20,6 +20,10 @@ int main()
     scanf("%d",&n);
     if(n < 0) return -1;
     int k = pierwiastek(n);
-    printf("Pierwiastek z %d = %d",n,k);
+    if(pierwiastek(n) == -1)
+    {
+        printf("Podloga wynosi %d",n);
+    }
+    else printf("Pierwiastek z %d = %d",n,k);
     return 0;
 }
