@@ -67,11 +67,11 @@ int main()
     {
         if(i < n-1)
         {
-            printf("%d. %d, \n", i,tab[i]);
+            printf("%d. %5d, \n", i,tab[i]);
         }
         else if(i < n)
         {
-            printf("%d. %d\n", i,tab[i]);
+            printf("%d. %5d\n", i,tab[i]);
         }
     }
 

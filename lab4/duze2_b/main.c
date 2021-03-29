@@ -38,11 +38,11 @@ int main()
     {
         if(i < n-1)
         {
-            printf("%d, ", tab[i]);
+            printf("%5d, ", tab[i]);
         }
         else if(i < n)
         {
-            printf("%d", tab[i]);
+            printf("%5d", tab[i]);
         }
     }
 
@@ -63,11 +63,11 @@ int main()
     {
         if(i < n-1)
         {
-            printf("%d, ", tab[i]);
+            printf("%5d, ", tab[i]);
         }
         else if(i < n)
         {
-            printf("%d", tab[i]);
+            printf("%5d", tab[i]);
         }
     }
 
