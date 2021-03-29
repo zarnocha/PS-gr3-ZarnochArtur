@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1617021616 source:c:\github\programowanie strukturalne\ps-gr3-zarnochartur\lab4\duze3_c\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+
