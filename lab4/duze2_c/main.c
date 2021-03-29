@@ -43,13 +43,37 @@ int main()
         prawy = tmp;
     }
 
-    printf("lewy: %d, prawy: %d",lewy,prawy);
+    //printf("lewy: %d, prawy: %d",lewy,prawy);
+
+    printf("\nTablica przed zamiana: ");
+    for(int i=0; i<n; i++)
+    {
+        if(i < n-1)
+        {
+            printf("%d. %d, \n", i,tab[i]);
+        }
+        else if(i < n)
+        {
+            printf("%d. %d\n", i,tab[i]);
+        }
+    }
 
     int tmp = tab[lewy];
     tab[lewy] = tab[prawy];
     tab[prawy] = tmp;
 
-
+    printf("\nTablica po zamianie: ");
+    for(int i=0; i<n; i++)
+    {
+        if(i < n-1)
+        {
+            printf("%d. %d, \n", i,tab[i]);
+        }
+        else if(i < n)
+        {
+            printf("%d. %d\n", i,tab[i]);
+        }
+    }
 
     return 0;
 }
