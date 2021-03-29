@@ -8,6 +8,28 @@ int main()
     printf("Podaj liczbe z przedzialu 1 do %d: ", N);
     int n;
     scanf("%d",&n);
+
+    short limit = 100;
+    short tab[N];
+    srand(time(0));
+
+    for (int j = 0; j < n; ++j)
+    {
+        tab[j] = rand() % limit + 1;
+    }
+
+    printf("\nTablica: \n");
+    for(int i=0; i<n; i++)
+    {
+        if(i < n-1)
+        {
+            printf("%d. %5d, \n", i,tab[i]);
+        }
+        else if(i < n)
+        {
+            printf("%d. %5d\n", i,tab[i]);
+        }
+    }
     int lewy; int prawy;
     printf("Podaj dwie nieujemne liczby nie wieksze od %d: ",n);
     scanf("%d",&lewy);
@@ -28,20 +50,24 @@ int main()
         return -1;
     }
 
-    short limit = 100;
-    short tab[N];
-    srand(time(0));
-    for (int j = 0; j < n; ++j)
+     printf("\nTablica po zamianie: ");
+    for(int i=0; i<n; i++)
     {
-        tab[j] = rand() % limit + 1;
+        if(i < n-1)
+        {
+            printf("%d. %5d, \n", i,tab[i]);
+        }
+        else if(i < n)
+        {
+            printf("%d. %5d\n", i,tab[i]);
+        }
     }
-
-    if(prawy < lewy) //moze byc zbedne
+    /*if(prawy < lewy) //moze byc zbedne
     {
         int tmp = lewy;
         lewy = prawy;
         prawy = tmp;
-    }
+    }*/
 
     //printf("lewy: %d, prawy: %d",lewy,prawy);
 
@@ -58,9 +84,22 @@ int main()
         }
     }
 
-    int tmp = tab[lewy];
+    /*int tmp = tab[lewy];
     tab[lewy] = tab[prawy];
-    tab[prawy] = tmp;
+    tab[prawy] = tmp;*/
+
+    int k = lewy; int l = prawy;
+
+    for(int i=lewy; i<(prawy+lewy)/2; i++)
+    {
+        int tmp = tab[k];
+        tab[k] = tab[l];
+        tab[l] = tmp;
+        k--;
+        l--;
+        if(k == l) break;
+
+    }
 
     printf("\nTablica po zamianie: ");
     for(int i=0; i<n; i++)
