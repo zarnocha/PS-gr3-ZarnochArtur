@@ -25,7 +25,6 @@ float foo(int n, int m, int p)
 
     while(zmienna > 0)
     {
-
         podstawa*=n;
         zmienna--;
     }
@@ -33,8 +32,7 @@ float foo(int n, int m, int p)
 
     if(m < 0)
     {
-        float podstawa_podziel = 1/podstawa;
-        return (podstawa_podziel/p);
+        return ((1/podstawa)/p);
     }
     else
     {
@@ -55,6 +53,12 @@ int main()
     printf("Podaj liczbe p: ");
     int p;
     scanf("%d",&p);
+
+    if(p == 0)
+    {
+        printf("Nie mozna dzielic przez 0!");
+        return -1
+    }
 
     if(n == 0 && m == 0 && p == 0)
     {
