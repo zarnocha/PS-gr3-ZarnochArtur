@@ -1,0 +1,1 @@
+Artur Żarnoch, gr. 3, 12.04.2021, kolokwium nr 1, programowanie strukturalne
