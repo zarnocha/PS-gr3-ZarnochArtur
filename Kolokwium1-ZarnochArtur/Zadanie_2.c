@@ -3,10 +3,6 @@
 
 float foo(int n, int m, int p)
 {
-    int zmienna = m-1;
-    int podstawa = n;
-    float wynik;
-
     if(n == 0)
     {
         return 0;
@@ -14,40 +10,36 @@ float foo(int n, int m, int p)
 
     if(m == 0)
     {
-        n = 1;
+        return 1/p;
     }
 
-    if(m < 0)
+
+    int zmienna = m-1;
+
+    if(zmienna < 0)
     {
         zmienna *= -1;
     }
 
-    while(zmienna>0)
+    float podstawa = n;
+
+    while(zmienna > 0)
     {
-        podstawa *= n;
+
+        podstawa*=n;
         zmienna--;
     }
+
 
     if(m < 0)
     {
-        wynik = ((1/podstawa)*(1/p));
-        return wynik;
+        float podstawa_podziel = 1/podstawa;
+        return (podstawa_podziel/p);
     }
-
-    wynik = podstawa/p;
-    return wynik;
-}
-
-
-float funkcja(int n, int m, int p)
-{
-    int zmienna = m-1;
-    while(zmienna > 0)
+    else
     {
-        n *= n;
-        zmienna--;
+        return (podstawa/p);
     }
-    return n/p;
 }
 
 int main()
@@ -70,8 +62,7 @@ int main()
     }
 
     float wynik = foo(n, m, p);
-    //float liczba = funkcja(n, m, p);
-    printf("Wynik to %0.2f", wynik);
+    printf("Wynik to %f", wynik);
 
     return 0;
 }
