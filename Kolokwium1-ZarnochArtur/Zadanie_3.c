@@ -8,10 +8,12 @@ int ostatnia_cyfra(int n)
 }
 int main()
 {
-    printf("Podaj liczbe n: ");
+    //printf("Podaj liczbe n: ");
     int n;
-    scanf("%d", &n);
+    //scanf("%d", &n);
+    n = 98765;
     int ostatnia = ostatnia_cyfra(n);
-    printf("%d", ostatnia);
+    printf("Ostatnia cyfra %d to %d", n, ostatnia);
+
     return 0;
 }
