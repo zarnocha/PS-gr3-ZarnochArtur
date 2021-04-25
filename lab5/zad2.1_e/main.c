@@ -27,7 +27,14 @@ int main()
 
     // znajdzie w tablicy element najwiêkszy oraz obliczy ile razy wystêpuje on w tablicy:
     int iloscWystapien = ileMaksymalnych(tab, n);
-    printf("Najwiekszy element wystapil %d razy.", iloscWystapien);
+
+    if(iloscWystapien == 1)
+    {
+        printf("Najwiekszy element wystapil %d raz.\n", iloscWystapien);
+    }
+
+    else printf("Najwiekszy element wystapil %d razy.\n", iloscWystapien);
+
     return 0;
 }
 
@@ -63,6 +70,8 @@ int ileMaksymalnych(const short tab[], int n)
             najwiekszy = *p;
         }
     }
+    printf("\nNajwiekszy element: %d\n\n", najwiekszy);
+
 
     int wystepowanie = 0;
     for (short *p = tab; p< tab+n; ++p) //obliczanie ilosci wystapien najwiekszego elementu
