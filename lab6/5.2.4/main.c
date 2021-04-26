@@ -15,8 +15,8 @@ int porownaj(char *nap1, char *nap2)
 
 int main()
 {
-    char napis1[] = "abc";
-    char napis2[] = "bbb";
+    char napis1[] = "aaA";
+    char napis2[] = "aaA";
 
     int porownanie = porownaj(napis1, napis2);
 
