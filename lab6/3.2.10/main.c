@@ -5,14 +5,13 @@
 // dla pojedynczej zmiennej
 // typu double i zwraca jako wartoœæ wskaŸnik do niej.
 
-int foo()
+int* foo()
 {
     return (double*)malloc(sizeof(double));
 }
 
 int main()
 {
-    //foo();
     printf("%p", foo());
     return 0;
 }
