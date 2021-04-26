@@ -35,18 +35,20 @@ void kopiujn(char nap1[], char nap2[], int liczba_n, int len1)
 
 int main()
 {
-    char nap1[] = "zero";
+    printf("Podaj nap1: ");
+    char nap1[1000];    //bez rozmiaru nie dzia³a³o wprowadzanie z konsoli
+    scanf("%s", nap1);
     printf("Nap1: %s\n", nap1);
 
     char nap2[(sizeof(nap1)+1)];
 
-    printf("Podaj liczbe n: ");
+    printf("\nPodaj liczbe n: ");
     int liczba_n;
     scanf("%d", &liczba_n);
 
     size_t len1 = sizeof(nap1)/sizeof(char);
 
-    printf("Nap2 (przed): %s\n", nap2);
+    printf("\nNap2 (przed): %s\n", nap2);
     kopiujn(nap1, nap2, liczba_n, len1);
     printf("Nap2 (po): %s\n", nap2);
 
