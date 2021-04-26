@@ -8,7 +8,7 @@
 // typu char i wchar_t
 
 
-void przepisz(char napis1[], char napis2[])
+void przepisz(char napis1[], char napis2[], int dlugosc1, int dlugosc2)
 {
     int i;
     /*printf("Napis forem: ");
@@ -16,7 +16,13 @@ void przepisz(char napis1[], char napis2[])
     {
         printf("%c",napis1[i]);
     }*/
-    for(i=0; i < sizeof(napis1); i++)
+    printf("\nNapis1: ");
+    for(i=0; i < dlugosc1; i++)  // wypisanie forem napisu1
+    {
+        printf("%c", napis1[i]);
+    }
+    printf("\n");
+    for(i=0; i < dlugosc1; i++)   // zapisanie napisu2
     {
         napis2[i] = napis1[i];
     }
@@ -24,26 +30,15 @@ void przepisz(char napis1[], char napis2[])
 
 int main()
 {
-    /*char napis1[] = "dlugi bardzo napis";
-    printf("%s\n", napis1);
-    printf("sizeof(napis1)%d\n", sizeof(napis1));
-
-    char napis2[(sizeof(napis1))];
-
-    printf("\nNapis2: %s", napis2);
-    printf("sizeof(napis2)%d\n", sizeof(napis2));
-
-    przepisz(&napis1, &napis2);
-
-    printf("\n(Po zmianie) Napis2: %s", napis2);*/
-
-    char napis1[] = "napis";
-    char napis2[sizeof(napis1)];
+    char napis1[] = "dziala dla kazdego napisu";
+    char napis2[(sizeof(napis1)*2)];
+    int dlugosc1 = sizeof(napis1)/sizeof(char);
+    int dlugosc2 = sizeof(napis2)/sizeof(char);
 
     printf("Napis2 undeclared: %s\n", napis2);
 
-    przepisz(napis1, napis2);
-    printf("Napis po zamianie: %s\n", napis2);
+    przepisz(napis1, napis2, dlugosc1, dlugosc2);
+    printf("\nNapis po zamianie: %s\n", napis2);
 
     return 0;
 }
