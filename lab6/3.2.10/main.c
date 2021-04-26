@@ -7,7 +7,7 @@
 
 int* foo()
 {
-    return (double*)malloc(sizeof(double));
+    return malloc(sizeof(double));
 }
 
 int main()
