@@ -10,7 +10,6 @@ sk³adaj¹cych siê ze znaków typu char i wchar_t.
 void wytnijznaki(char nap1[], char nap2[], size_t len1, size_t len2)
 {
     char nap3[1000];
-
     int k = 0;
 
     size_t len3 = sizeof(nap3) / sizeof(char);
