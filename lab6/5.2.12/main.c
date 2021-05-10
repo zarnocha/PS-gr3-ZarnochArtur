@@ -18,16 +18,16 @@ void wytnijznaki(char nap1[], char nap2[], size_t len1, size_t len2)
     {
         for (int j = 0; j < len2; j++)
         {
-            if (nap1[i] != nap2[j])
-            {
-                continue;
-            }
-            else if (nap1[i] == nap2[j])
-            {
-                nap3[k] = nap1[i];
-                k++;
-                break;
-            }
+                if (nap1[i] != nap2[j])
+                {
+                    continue;
+                }
+                else if (nap1[i] == nap2[j])
+                {
+                    nap3[k] = nap1[i];
+                    k++;
+                    break;
+                }
         }
     }
 
@@ -39,23 +39,54 @@ void wytnijznaki(char nap1[], char nap2[], size_t len1, size_t len2)
 
 }
 
+void wytnij(char nap1[], char nap2[], size_t len1, size_t len2)
+{
+    char nap3[10];
+
+
+    for(int i=0; i<len1; i++)
+    {
+        for(int j=0; j<len2; j++)
+        {
+            if(nap1[i] == nap2[j])
+            {
+                nap3[i] = nap2[j];
+                break;
+            }
+            else
+            {
+                continue;
+            }
+        }
+    }
+
+
+
+    size_t len3 = sizeof(nap3) / sizeof(char);
+
+    for(int i=0; i<len3; i++)
+    {
+        nap1[i] = nap3[i];
+    }
+}
+
+
 int main()
 {
     printf("Podaj nap1: ");
-    char nap1[1000];    //bez rozmiaru nie dzialalo wprowadzanie z konsoli
+    char nap1[100];    //bez rozmiaru nie dzialalo wprowadzanie z konsoli
     scanf("%s", nap1);
     printf("Nap1: %s\n", nap1);
 
     printf("\nPodaj nap2: ");
-    char nap2[1000];
+    char nap2[100];
     scanf("%s", nap2);
     printf("Nap2: %s\n", nap2);
 
     size_t len1 = sizeof(nap1) / sizeof(char);
     size_t len2 = sizeof(nap2) / sizeof(char);
-    len1 = sizeof(nap1);
 
-    wytnijznaki(nap1, nap2, len1, len2);
+    wytnij(nap1, nap2, len1, len2);
 
     printf("\nNap1 po wytnijzn: %s\n", nap1);
     return 0;
