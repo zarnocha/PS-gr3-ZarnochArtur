@@ -7,7 +7,7 @@ w napisie nap2. Napisz dwie wersje funkcji wytnijzn dla napisów
 sk³adaj¹cych siê ze znaków typu char i wchar_t.
 */
 
-void wytnijzn(char nap1[], char nap2[], size_t len1, size_t len2)
+void wytnijznaki(char nap1[], char nap2[], size_t len1, size_t len2)
 {
     char nap3[1000];
 
@@ -56,7 +56,7 @@ int main()
     size_t len2 = sizeof(nap2) / sizeof(char);
     len1 = sizeof(nap1);
 
-    wytnijzn(nap1, nap2, len1, len2);
+    wytnijznaki(nap1, nap2, len1, len2);
 
     printf("\nNap1 po wytnijzn: %s\n", nap1);
     return 0;
