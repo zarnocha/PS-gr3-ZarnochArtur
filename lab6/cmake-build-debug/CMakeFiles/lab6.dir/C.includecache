@@ -1,0 +1,68 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/GitHub/Programowanie strukturalne/PS-gr3-ZarnochArtur/lab6/3.2.10/main.c
+stdio.h
+-
+stdlib.h
+-
+
+C:/GitHub/Programowanie strukturalne/PS-gr3-ZarnochArtur/lab6/3.2.12/main.c
+stdio.h
+-
+stdlib.h
+-
+
+C:/GitHub/Programowanie strukturalne/PS-gr3-ZarnochArtur/lab6/3.2.6/main.c
+stdio.h
+-
+stdlib.h
+-
+
+C:/GitHub/Programowanie strukturalne/PS-gr3-ZarnochArtur/lab6/5.2.12/main.c
+stdio.h
+-
+stdlib.h
+-
+
+C:/GitHub/Programowanie strukturalne/PS-gr3-ZarnochArtur/lab6/5.2.2/main.c
+stdio.h
+-
+stdlib.h
+-
+
+C:/GitHub/Programowanie strukturalne/PS-gr3-ZarnochArtur/lab6/5.2.24/main.c
+stdio.h
+-
+stdlib.h
+-
+
+C:/GitHub/Programowanie strukturalne/PS-gr3-ZarnochArtur/lab6/5.2.3/main.c
+stdio.h
+-
+stdlib.h
+-
+
+C:/GitHub/Programowanie strukturalne/PS-gr3-ZarnochArtur/lab6/5.2.4/main.c
+stdio.h
+-
+stdlib.h
+-
+
+C:/GitHub/Programowanie strukturalne/PS-gr3-ZarnochArtur/lab6/5.2.5/main.c
+stdio.h
+-
+stdlib.h
+-
+
+C:/GitHub/Programowanie strukturalne/PS-gr3-ZarnochArtur/lab6/5.2.6/main.c
+stdio.h
+-
+stdlib.h
+-
+

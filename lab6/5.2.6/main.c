@@ -21,7 +21,7 @@ void kopiujn(char nap1[], char nap2[], int liczba_n, int len1)
       {
           nap2[i] = nap1[i];
       }
-      nap2[++i] = '0';
+      //nap2[++i] = '0';
   }
   else
   {
@@ -29,8 +29,9 @@ void kopiujn(char nap1[], char nap2[], int liczba_n, int len1)
       {
           nap2[i] = nap1[i];
       }
-      nap2[++i] = '0';
+      //nap2[++i] = '0';
   }
+  nap2[++i] = '0';
 }
 
 int main()
@@ -48,7 +49,6 @@ int main()
 
     size_t len1 = sizeof(nap1)/sizeof(char);
 
-    printf("\nNap2 (przed): %s\n", nap2);
     kopiujn(nap1, nap2, liczba_n, len1);
     printf("Nap2 (po): %s\n", nap2);
 
