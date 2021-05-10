@@ -37,7 +37,7 @@ void wytnijznak(char *nap1, char *nap2, int len1, int len2)
 
     size_t len3 = sizeof(nap3)/sizeof(char);
 
-    printf("\nlen3 %d\n", len3);
+    //printf("\nlen3 %d\n", len3);
 
     for(int i=0; i<len1; i++)
     {
@@ -51,31 +51,36 @@ void wytnijznak(char *nap1, char *nap2, int len1, int len2)
             {
                 nap3[k] = nap1[i];
                 k++;
+                break;
             }
         }
     }
-    printf("nap3 : %s", nap3);
-    nap1 = nap3;
+
+    // printf("nap3: %s", nap3);
+    for(int i=0; i<len3; i++)
+    {
+        nap1[i] = nap3[i];
+    }
 
 }
 
 int main()
 {
-    char nap1[] = "abcd";
+    char nap1[] = "testowanie";
     printf("Nap1: %s\n", nap1);
 
-    char nap2[] = "bc";
+    char nap2[] = "krzeslo";
     printf("Nap2: %s\n", nap2);
 
     size_t len1 = sizeof(nap1)/sizeof(char);
     size_t len2 = sizeof(nap2)/sizeof(char);
 
-    printf("\nlen1: %d\n", len1);
-    printf("\nlen2: %d\n", len2);
+    //printf("\nlen1: %d\n", len1);
+    //printf("\nlen2: %d\n", len2);
 
     wytnijznak(nap1, nap2, len1, len2);
 
-    printf("Nap1 po wytnijzn: %s\n", nap1);
+    printf("\nNap1 po wytnijzn: %s\n", nap1);
 
     return 0;
 }
