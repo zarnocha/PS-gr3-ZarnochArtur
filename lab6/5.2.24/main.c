@@ -19,17 +19,11 @@ void kopiuj(char *napis, char tablica[])
 
 int main()
 {
-    char *napis = "testowanie";
-    printf("Nap1: %s\n", napis);
+    char *napis = "testowy napis";
+    printf("napis: %s\n", napis);
 
     char tablica[strlen(napis)];
-    printf("Nap2: %s\n", tablica);
-
-    size_t len1 = sizeof(napis)/sizeof(char);
-    size_t len2 = sizeof(tablica)/sizeof(char);
-
-    printf("\nlen1: %d\n", len1);
-    printf("len2: %d\n", len2);
+    printf("tablica: %s\n", tablica);
 
     kopiuj(napis, tablica);
     printf("\nSkopiowany napis: %s\n", tablica);
