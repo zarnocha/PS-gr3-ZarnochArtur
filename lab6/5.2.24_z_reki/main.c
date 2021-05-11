@@ -15,20 +15,26 @@ void kopiuj(char *napis, char tablica[])
     {
         tablica[i] = napis[i];
     }
-    if(strlen(napis)<3) //koniecznosc zeby dzialalo dla pojedyn. liter, bez tego - krzaki
-    {
-        for(int i=sizeof(tablica); i>=strlen(napis); i--)
-        {
-            tablica[i] = "\0";
-        }
-    }
-    if(sizeof(tablica)>=8) //war. konieczny bo znow krzaki
-    {
-        for(int i=sizeof(tablica); i>=strlen(napis); i--)
-        {
-            tablica[i] = '\0';
-        }
-    }
+    printf("\nstrlen: %d\n", strlen(napis));
+//    if(strlen(napis)<3) //koniecznosc zeby dzialalo dla pojedyn. liter, bez tego - krzaki
+//    {
+//        for(int i=(sizeof(tablica)); i>=strlen(napis); i--)
+//        {
+//            tablica[i] = "\0";
+//        }
+//    }
+//    if(sizeof(tablica)>=8) //war. konieczny bo znow krzaki
+//    {
+//        if(strlen(napis)>8)
+//        {
+//            int zmienna;
+//            zmienna = (sizeof(tablica)-8);
+//            for(int i=(sizeof(tablica))+zmienna ; i>=strlen(napis); i--) //jesli strlen(napis) = 13, to po dodaniu do sizeof(tablica) 5, nie ma krzakow, tak samo dla strlen(napis) = 12 i sizeof(tablica)+4, itd.
+//            {
+//                tablica[i] = '\0';
+//            }
+//        }
+//    }
 }
 
 int main()
@@ -42,11 +48,11 @@ int main()
     int rozmiar;
     if(strlen(napis) < 3) //zeby dzialalo dla pojedynczych liter
     {
-        rozmiar = 8;
+        rozmiar = (strlen(napis)*4);
     }
     else
     {
-        rozmiar = strlen(napis)+1;
+        rozmiar = strlen(napis)*2;
     }
     char tablica[rozmiar];
     printf("\nsizeof tablica: %d\n", sizeof(tablica));
@@ -54,6 +60,18 @@ int main()
     // printf("tablica: %s\n", tablica);
 
     kopiuj(napis, tablica);
-    printf("\nSkopiowany napis: %s\n", tablica);
+    if(strlen(napis) > 4)
+    {
+        printf("\nnapis: %s\n", tablica);
+    }
+    else
+    {
+        printf("\nnapis: ");
+        for(int i=0; i<strlen(napis); i++)
+        {
+            printf("%c", tablica[i]);
+        }
+        printf("\n");
+    }
     return 0;
 }
