@@ -28,7 +28,7 @@ int sumaElementow(int n, int tablica[n][100][100])
 
 int main()
 {
-    int n = 5; //dodatnia liczba ca³kowita "n"
+    int n = 50; //dodatnia liczba ca³kowita "n"
     if(n<0)
     {
         printf("Zle n.");
