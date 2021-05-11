@@ -9,15 +9,22 @@ dwuwymiarowej tablicy tablic tab2 o wymiarach m × n zawieraj¹cej
 transponowan¹ macierz przechowywan¹ w tablicy tab1 (czyli dla dowolnych k i j zachodzi tab1[k][j]=tab2[j][k].
 */
 
-void fcja(int **tablica, int n, int m)
+int wsk(int **tablica, int n, int m)
 {
+    int **tablica2;
+    tablica2 = malloc(m* sizeof(int*));
+    for(int i=0; i<m; i++)
+    {
+        tablica2[i] = malloc(n * sizeof(int));
+    }
+
+
 
 }
 
 void wypelnianie(int **tablica, int n, int m);
 
 void wypisywanie(int **tablica, int n, int m);
-
 
 int main()
 {
@@ -35,8 +42,6 @@ int main()
     wypelnianie(tablica, n, m);
 
     wypisywanie(tablica, n, m);
-
-    fcja(tablica,n,m);
 
     wypisywanie(tablica, n, m);
 
