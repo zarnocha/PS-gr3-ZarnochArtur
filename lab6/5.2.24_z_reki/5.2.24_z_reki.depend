@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1620696274 source:c:\github\programowanie_strukturalne\ps-gr3-zarnochartur\lab6\5.2.24_z_reki\main.c
+1620696428 source:c:\github\programowanie_strukturalne\ps-gr3-zarnochartur\lab6\5.2.24_z_reki\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>

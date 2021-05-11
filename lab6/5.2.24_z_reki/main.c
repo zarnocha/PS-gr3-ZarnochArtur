@@ -52,7 +52,7 @@ int main()
     }
     else
     {
-        rozmiar = strlen(napis)*2;
+        rozmiar = strlen(napis)*(2);
     }
     char tablica[rozmiar];
     printf("\nsizeof tablica: %d\n", sizeof(tablica));
