@@ -9,7 +9,7 @@ i przypisuje wskaŸnik do nowo utworzonej tablicy do zmiennej wskazywanej
 przez drugi argument.
 */
 
-int *kopiuj(char *napis, int *wsk)
+char *kopiuj(char *napis, char *wsk)
 {
     char tablica[strlen(napis)]; //tworzy nową tablicę znaków,
 
@@ -17,14 +17,16 @@ int *kopiuj(char *napis, int *wsk)
     {
         tablica[i] = napis[i]; //kopiuje do niej napis zawarty w pierwszym argumencie,
     }
+    printf("\nNapis w tablicy: ");
     for(int i=0; i<strlen(napis); i++)
     {
         printf("%c", tablica[i]);
     }
 
     wsk = &tablica; //przypisuje wskaźnik do nowo utworzonej tablicy do zmiennej wskazywanej przez drugi argument.
-    printf("\nAdres tablicy %p\n", &tablica);
-    printf("\nznak z wsk: %c\n", (*wsk));
+    printf("\n\nAdres tablicy %x\n", &tablica);
+    printf("Adres wskaznika wsk: %x\n", wsk);
+    printf("znak z wsk: %c\n", (*wsk));
 
     return wsk;
 }
@@ -32,13 +34,15 @@ int *kopiuj(char *napis, int *wsk)
 int main()
 {
     char *napis = "napis";
-    int *wsk = &napis;
+    char *wsk = &napis;
+    printf("znak z wsk: %c\n", *wsk);
+
     printf("Adres wskaznika wsk: %x\n", wsk);
     printf("Adres napisu: %x\n", &napis);
 
-    wsk = kopiuj(napis, wsk);
+    wsk = kopiuj(napis, &wsk);
 
-    printf("\nAdres wskaznika wsk: %p\n", wsk);
-
+    printf("\nAdres wskaznika wsk: %x\n", wsk);
+    printf("znak z wsk: %c\n", *wsk);
     return 0;
 }
