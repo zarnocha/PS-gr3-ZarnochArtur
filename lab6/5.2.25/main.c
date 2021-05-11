@@ -23,21 +23,22 @@ int *kopiuj(char *napis, int *wsk)
     }
 
     wsk = &tablica; //przypisuje wskaźnik do nowo utworzonej tablicy do zmiennej wskazywanej przez drugi argument.
-    printf("\nAdres tablicy %x\n", &tablica);
+    printf("\nAdres tablicy %p\n", &tablica);
+    printf("\nznak z wsk: %c\n", (*wsk));
+
     return wsk;
 }
 
 int main()
 {
-    char *napis = "jakis bardzo dlugi tekst";
+    char *napis = "napis";
     int *wsk = &napis;
     printf("Adres wskaznika wsk: %x\n", wsk);
     printf("Adres napisu: %x\n", &napis);
 
     wsk = kopiuj(napis, wsk);
 
-    printf("\nAdres wskaznika wsk: %x\n", wsk);
-
+    printf("\nAdres wskaznika wsk: %p\n", wsk);
 
     return 0;
 }
