@@ -67,7 +67,17 @@ int main()
     printf("\nCzy odc4 i odc5 sa rownolegle?: %s\n", parallel(odc4, odc5) ? "Tak" : "Nie");
     printf("\nCzy odc4 i odc5 sa prostopadle?: %s\n", perpendicular(odc4, odc5) ? "Tak" : "Nie");
 
-    printf("\n...\n");
+    LineSegment *odc6 = malloc(sizeof(LineSegment));
+    *odc6 = makeLineSegment(-2, -2, 2, 2);
+
+    printf("\n--------------------------\nPrzesuniecie odcinka odc6\n--------------------------\n");
+    printf("Przed:\n");
+    show(odc6);
+
+    printf("-------------------------\nPo:\n");
+    move(odc6, 3, 3);
+    show(odc6);
+    printf("--------------------------\n");
 
     return 0;
 }
@@ -128,5 +138,9 @@ bool perpendicular(const LineSegment *s1, const LineSegment *s2)
 
 void move(LineSegment *s, int deltaX, int deltaY)
 {
+    s->a.x += deltaX;
+    s->a.y += deltaY;
 
+    s->b.x += deltaX;
+    s->b.y += deltaY;
 }
