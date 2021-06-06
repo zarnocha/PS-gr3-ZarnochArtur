@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1623021489 source:c:\github\programowanie_strukturalne\ps-gr3-zarnochartur\lab9\towar\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
