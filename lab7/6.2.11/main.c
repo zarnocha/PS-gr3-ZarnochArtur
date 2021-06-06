@@ -22,6 +22,7 @@ int sumawartosci(int tablica[][100], int n)
     }
     return suma;
 }
+
 void wypelnianie(int tablica[][100], int n);
 
 int main()

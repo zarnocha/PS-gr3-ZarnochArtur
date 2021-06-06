@@ -56,7 +56,7 @@ int porownaj_dwa(const char* pierwszy, const char* drugi, const int len_pierwszy
 int main()
 {
     char napis1[] = "Napis";
-    char napis2[] = "testoawnie";
+    char napis2[] = "Napis"; //char napis2[] = "Test"
 
     size_t dlugosc1 = sizeof(napis1)/sizeof(char);
     size_t dlugosc2 = sizeof(napis2)/sizeof(char);
