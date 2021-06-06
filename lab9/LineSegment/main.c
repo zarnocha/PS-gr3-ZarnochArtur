@@ -15,6 +15,7 @@ void show(const LineSegment *s);
 double length(const LineSegment *s);
 bool parallel(const LineSegment *s1, const LineSegment *s2);
 bool perpendicular(const LineSegment *s1, const LineSegment *s2);
+void move(LineSegment *s, int deltaX, int deltaY);
 
 int main()
 {
@@ -64,6 +65,7 @@ int main()
     printf("\nDlugosc odc3: %.3f\n", length(odc3));
 
     printf("\nCzy odc4 i odc5 sa rownolegle?: %s\n", parallel(odc4, odc5) ? "Tak" : "Nie");
+    printf("\nCzy odc4 i odc5 sa prostopadle?: %s\n", perpendicular(odc4, odc5) ? "Tak" : "Nie");
 
     printf("\n...\n");
 
@@ -112,5 +114,19 @@ bool parallel(const LineSegment *s1, const LineSegment *s2)
 
 bool perpendicular(const LineSegment *s1, const LineSegment *s2)
 {
-    return true;
+    double a1 = (s1->b.y - s1->a.y)/(s1->b.x - s1->a.x);
+    double a2 = (s2->b.y - s2->a.y)/(s2->b.x - s2->a.x);
+    if(a1*a2 == -1)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+
+void move(LineSegment *s, int deltaX, int deltaY)
+{
+
 }
