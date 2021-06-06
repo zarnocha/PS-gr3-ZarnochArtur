@@ -26,3 +26,21 @@
 	<math.h>
 	"point.h"
 
+1622999929 source:c:\github\programowanie_strukturalne\ps-gr3-zarnochartur\lab9\linesegment\point-1.c
+	<stdio.h>
+	<math.h>
+	"point.h"
+
+1622999929 c:\github\programowanie_strukturalne\ps-gr3-zarnochartur\lab9\linesegment\point.h
+
+1622999929 source:c:\github\programowanie_strukturalne\ps-gr3-zarnochartur\lab9\linesegment\point-2.c
+	<stdio.h>
+	<math.h>
+	"point.h"
+
+1623001082 source:c:\github\programowanie_strukturalne\ps-gr3-zarnochartur\lab9\linesegment\main.c
+	<stdio.h>
+	<stdlib.h>
+	"POINT.H"
+	<stdbool.h>
+

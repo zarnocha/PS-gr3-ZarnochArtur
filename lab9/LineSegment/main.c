@@ -3,7 +3,8 @@
 #include "POINT.H"
 #include <stdbool.h>
 
-typedef struct LineSegment{
+typedef struct LineSegment
+{
     Point a;
     Point b;
 } LineSegment;
@@ -26,13 +27,27 @@ int main()
 
     LineSegment odc = makeLineSegment(2, 1, 3, 7); //ax, ay, bx, by
     //printf("\n\nODCINEK:\np1 = <%d, %d>\np2 = <%d, %d>\n", odc.a.x, odc.a.y, odc.b.x, odc.b.y);
-    printf("\n\nODCINEK:\n"); printf("p1 = "); showPoint(odc.a); printf("\np2 = "); showPoint(odc.b); printf("\n");
+    printf("\n\nODCINEK:\n");
+    printf("p1 = ");
+    showPoint(odc.a);
+    printf("\np2 = ");
+    showPoint(odc.b);
+    printf("\n");
 
-    Point *p3 = malloc(2*sizeof(int)); p3->x = 1; p3->y = 4;
-    Point *p4 = malloc(2*sizeof(int)); p4->x = 2; p4->y = 7;
+    Point *p3 = malloc(2*sizeof(int));
+    p3->x = 1;
+    p3->y = 4;
+    Point *p4 = malloc(2*sizeof(int));
+    p4->x = 2;
+    p4->y = 7;
 
     LineSegment odc2 = makeLineSegmentfromPoints(p3, p4);
-    printf("\nODCINEK 2:\n"); printf("p1 = "); showPoint(odc2.a); printf("\np2 = "); showPoint(odc2.b); printf("\n");
+    printf("\nODCINEK 2:\n");
+    printf("p1 = ");
+    showPoint(odc2.a);
+    printf("\np2 = ");
+    showPoint(odc2.b);
+    printf("\n");
 
     printf("\nmakeLineSegmentfromPoints\n");
 
@@ -49,6 +64,8 @@ int main()
     printf("\nDlugosc odc3: %.3f\n", length(odc3));
 
     printf("\nCzy odc4 i odc5 sa rownolegle?: %s\n", parallel(odc4, odc5) ? "Tak" : "Nie");
+
+    printf("\n...\n");
 
     return 0;
 }
