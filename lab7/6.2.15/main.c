@@ -32,7 +32,7 @@ int main()
     if(n<0)
     {
         printf("Zle n.");
-        return -1;
+        return 1;
     }
 
     int tablica[n][100][100];

@@ -58,6 +58,7 @@ void wypisywanie(int **tablica, int n, int m)
 {
     for(int i=0; i<n; i++)
     {
+        printf("%d -> ", i);
         for(int j=0; j<m; j++)
         {
             printf("%d ", tablica[i][j]);
