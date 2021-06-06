@@ -7,7 +7,10 @@ typedef struct DigitalClock{
 } DigitalClock;
 
 DigitalClock makeDigitalClock(unsigned godzina, unsigned minuta);
+
 void increment(const DigitalClock *d, unsigned ileMinut);
+void incrementMinute(const DigitalClock *d);
+
 void showDigitalClock(const DigitalClock d);
 void showDigitalClockPointer(const DigitalClock *d);
 
@@ -26,9 +29,12 @@ int main()
 
     DigitalClock *zegar3 = malloc(sizeof(DigitalClock));
     zegar3->godzina = 72;
-    zegar3->minuta = 256;
+    zegar3->minuta = 257;
     increment(zegar3, 60);
-    printf("Zegar 3: "); showDigitalClockPointer(zegar3); printf("\n\n");
+    printf("Zegar 3: "); showDigitalClockPointer(zegar3); printf("\n");
+
+    incrementMinute(zegar3);
+    printf("Zegar 3 minute pozniej: "); showDigitalClockPointer(zegar3); printf("\n\n");
 
     return 0;
 }
@@ -151,4 +157,29 @@ void showDigitalClockPointer(const DigitalClock *d)
         }
         else printf("%d:%d\n", wsk->godzina, wsk->minuta);
     }
+}
+
+void incrementMinute(const DigitalClock *d)
+{
+    DigitalClock *wsk = d;
+    wsk->minuta += 1;       //serce funkcji
+
+    if(wsk->godzina>23)
+    {
+        while(wsk->godzina>23)
+        {
+            wsk->godzina -= 24;
+        }
+    }
+    if(wsk->minuta>59)
+    {
+        int dodawanie = 0;
+        while(wsk->minuta>59)
+        {
+            wsk->minuta -= 60;
+            dodawanie ++;
+        }
+        wsk->godzina += dodawanie;
+    }
+    d = wsk;
 }
