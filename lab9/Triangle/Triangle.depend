@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1623006517 source:c:\github\programowanie_strukturalne\ps-gr3-zarnochartur\lab9\triangle\main.c
+	<stdio.h>
+	<stdlib.h>
+	"POINT.H"
+	<stdbool.h>
+
+1622999929 c:\github\programowanie_strukturalne\ps-gr3-zarnochartur\lab9\triangle\point.h
+
