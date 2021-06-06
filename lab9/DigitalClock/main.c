@@ -52,7 +52,7 @@ int main()
     printf("Zegar 5: "); showDigitalClockPointer(zegar5); printf("\n");
 
     DigitalClock *zegar6 = malloc(sizeof(DigitalClock));
-    zegar6->godzina = 128; //25
+    zegar6->godzina = 128;
     zegar6->minuta = 218;
     decrementMinute(zegar6);
     printf("Zegar 6: "); showDigitalClockPointer(zegar6); printf("\n");
