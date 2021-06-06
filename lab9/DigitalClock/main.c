@@ -16,19 +16,19 @@ int main()
     DigitalClock *zegar1 = malloc(sizeof(DigitalClock));
     zegar1->godzina = 64;
     zegar1->minuta = 128;
-    printf("Zegar 1:    ");
+    printf("Zegar 1: ");
     showDigitalClockPointer(zegar1);
-    printf("\n");
+    printf("\n\n");
 
     DigitalClock zegar2 = makeDigitalClock(64, 128);
-    printf("Zegar 2:    "); showDigitalClock(zegar2); printf("\n");
+    printf("Zegar 2: "); showDigitalClock(zegar2); printf("\n\n");
 
 
     DigitalClock *zegar3 = malloc(sizeof(DigitalClock));
-    zegar3->godzina = 64;
-    zegar3->minuta = 128;
+    zegar3->godzina = 72;
+    zegar3->minuta = 256;
     increment(zegar3, 60);
-    printf("Zegar 3:    "); showDigitalClockPointer(zegar3); printf("\n");
+    printf("Zegar 3: "); showDigitalClockPointer(zegar3); printf("\n\n");
 
     return 0;
 }
