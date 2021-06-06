@@ -42,7 +42,6 @@ int main()
     move(trojkat4, 4, 7);
     printf("\nTrojkat 4 po 'move':\n"); show(trojkat4);
 
-
     return 0;
 }
 
