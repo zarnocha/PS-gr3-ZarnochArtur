@@ -14,6 +14,9 @@ void incrementMinute(const DigitalClock *d);
 void showDigitalClock(const DigitalClock d);
 void showDigitalClockPointer(const DigitalClock *d);
 
+void decrement(const DigitalClock *d, unsigned ileMinut);
+void decrementMinute(const DigitalClock *d);
+
 int main()
 {
     DigitalClock *zegar1 = malloc(sizeof(DigitalClock));
@@ -28,13 +31,25 @@ int main()
 
 
     DigitalClock *zegar3 = malloc(sizeof(DigitalClock));
-    zegar3->godzina = 72;
-    zegar3->minuta = 257;
+    zegar3->godzina = 88;
+    zegar3->minuta = 666;
     increment(zegar3, 60);
     printf("Zegar 3: "); showDigitalClockPointer(zegar3); printf("\n");
 
     incrementMinute(zegar3);
     printf("Zegar 3 minute pozniej: "); showDigitalClockPointer(zegar3); printf("\n\n");
+
+    DigitalClock *zegar4 = malloc(sizeof(DigitalClock));
+    zegar4->godzina = 23;
+    zegar4->minuta = 17;
+    decrement(zegar4, 122); //odejmujemy 122 minuty, ma wyjsc 21:15
+    printf("Zegar 4: "); showDigitalClockPointer(zegar4); printf("\n");
+
+    DigitalClock *zegar5 = malloc(sizeof(DigitalClock));
+    zegar5->godzina = 0;  //kom.2:  dzia³a tak samo (dobrze) dla 01, 02.
+    zegar5->minuta = 17;
+    decrement(zegar5, 122); //kom.1:    test dla godziny 00, unikam przekrêcenia siê zegara. w stylu: od godziny 00 odejmij 2 godziny -> 23, 22. tego nie chcê, wiêc zablokowa³em to w f-cji.
+    printf("Zegar 5: "); showDigitalClockPointer(zegar5); printf("\n");
 
     return 0;
 }
@@ -182,4 +197,64 @@ void incrementMinute(const DigitalClock *d)
         wsk->godzina += dodawanie;
     }
     d = wsk;
+}
+
+void decrement(const DigitalClock *d, unsigned ileMinut)
+{
+    DigitalClock *wsk = d;
+
+    if(wsk->minuta < ileMinut)
+    {
+        int odejmowanie = 0;
+        while(ileMinut>59)
+        {
+            ileMinut -= 60;
+            odejmowanie++;
+        }
+        if(wsk->godzina > odejmowanie)
+        {
+            wsk->godzina -= odejmowanie;
+        }
+        else
+        {
+            wsk->godzina = 0;
+        }
+    }
+    wsk->minuta -= ileMinut;
+
+    if(wsk->godzina>23)
+    {
+        while(wsk->godzina>23)
+        {
+            wsk->godzina -= 24;
+        }
+    }
+    if(wsk->minuta>59)
+    {
+        int dodawanie = 0;
+        while(wsk->minuta>59)
+        {
+            wsk->minuta -= 60;
+            dodawanie ++;
+        }
+        wsk->godzina += dodawanie;
+    }
+
+    if(ileMinut>59)
+    {
+        int dodawanie = 0;
+        while(ileMinut>59)
+        {
+            ileMinut -= 60;
+            dodawanie ++;
+        }
+        wsk->godzina += dodawanie;
+    }
+    d = wsk;
+}
+
+void decrementMinute(const DigitalClock *d)
+{
+    DigitalClock *wsk = d;
+
 }
