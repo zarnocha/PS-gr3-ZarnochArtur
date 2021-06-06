@@ -51,6 +51,12 @@ int main()
     decrement(zegar5, 122); //kom.1:    test dla godziny 00, unikam przekrêcenia siê zegara. w stylu: od godziny 00 odejmij 2 godziny -> 23, 22. tego nie chcê, wiêc zablokowa³em to w f-cji.
     printf("Zegar 5: "); showDigitalClockPointer(zegar5); printf("\n");
 
+    DigitalClock *zegar6 = malloc(sizeof(DigitalClock));
+    zegar6->godzina = 128; //25
+    zegar6->minuta = 218;
+    decrementMinute(zegar6);
+    printf("Zegar 6: "); showDigitalClockPointer(zegar6); printf("\n");
+
     return 0;
 }
 
@@ -253,8 +259,47 @@ void decrement(const DigitalClock *d, unsigned ileMinut)
     d = wsk;
 }
 
-void decrementMinute(const DigitalClock *d)
+void decrementMinute(const DigitalClock *d) //testowalem kilkukrotnie na 00:00
 {
     DigitalClock *wsk = d;
+    if(wsk->minuta > 0)
+        wsk->minuta -= 1;
+    else
+    {
+        wsk->minuta = 0;   //mialem dylemat czy po odjeciu minuty od 00:00 zrobic 23:59 czy zostawic to 00:00, zdecydowalem, ze skoro wczesniej nie obracalem zegarka, to tu tez go nie obroce, zostawiam 00:00.
+        if(wsk->godzina > 0)
+            wsk->godzina -= 1;
+        else
+        {
+            wsk->godzina = 0;
+        }
+    }
+    if(wsk->godzina>23)
+    {
+        int zmienna = wsk->godzina;
+        while(zmienna>23)
+        {
+            zmienna -= 24;
+        }
+        if(zmienna > 0)
+        {
+            wsk->godzina -= zmienna;
+        }
+        else
+        {
+            wsk->godzina = 0;
+        }
+    }
+    if(wsk->minuta > 59)
+    {
+        int odejmowanie = 0;
+        while(wsk->minuta > 59)
+        {
+            wsk->minuta -= 60;
+            odejmowanie++;
+        }
+        wsk->godzina -= odejmowanie;
+    }
 
+    d = wsk;
 }
