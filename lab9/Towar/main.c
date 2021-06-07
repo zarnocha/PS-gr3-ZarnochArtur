@@ -11,16 +11,24 @@ typedef struct Towar{
 
 Towar makeTowar(const char *nazwa, double cenaBrutto, float stawkaVAT);
 Towar makeTowarCopy(const Towar *towar);
+
 void show(const Towar *towar);
+void showStruct(Towar towar);
+
 void nazwanieTowaru(Towar *towar, char *tekst);
+
+double cenaNetto(const Towar *towar);
+double kwotaVAT(const Towar *towar);
 
 int main()
 {
     Towar towar1 = makeTowar("Cookies", 55.60, 23.59);
-    printf("Towar 1:\nNazwa: %s   Cena brutto: %.2f   Stawka VAT: %.2f\n", towar1.nazwa, towar1.cenaBrutto, towar1.stawkaVAT);
+    //printf("Towar 1:\nNazwa: %s\nCena brutto: %.2f\nStawka VAT: %.2f\n", towar1.nazwa, towar1.cenaBrutto, towar1.stawkaVAT);
+    printf("Towar 1:\n");
+    showStruct(towar1);
 
     Towar *towar2 = malloc(sizeof(Towar));
-    char *nazwa_towar2 = "Tea";
+    char *nazwa_towar2 = "Coca-Cola";
     nazwanieTowaru(towar2, nazwa_towar2);
     towar2->cenaBrutto = 13.37;
     towar2->stawkaVAT = 21.37;
@@ -30,6 +38,17 @@ int main()
     Towar towar3 = makeTowarCopy(towar2);
     printf("\nTowar 3:\n");
     showStruct(towar3);
+
+    Towar *towar4 = malloc(sizeof(Towar));
+    char *nazwa_towar4 = "Lasagne";
+    nazwanieTowaru(towar4, nazwa_towar4);
+    towar4->cenaBrutto = 12300;
+    towar4->stawkaVAT = 23;
+    printf("\nTowar 4:\n");
+    show(towar4);
+
+    printf("\nCena netto: %.2f PLN",  cenaNetto(towar4));
+    printf("\nKwota VAT: %.2f PLN\n", kwotaVAT(towar4));
 
     return 0;
 }
@@ -61,12 +80,12 @@ Towar makeTowarCopy(const Towar *towar)
 
 void show(const Towar *towar)
 {
-    printf("Nazwa: %s\nCena brutto: %.2f\nStawka VAT: %.2f\n", towar->nazwa, towar->cenaBrutto, towar->stawkaVAT);
+    printf("Nazwa: %s\nCena brutto: %.2f PLN\nStawka VAT: %.2f%%\n", towar->nazwa, towar->cenaBrutto, towar->stawkaVAT);
 }
 
 void showStruct(const Towar towar)
 {
-    printf("Nazwa: %s\nCena brutto: %.2f\nStawka VAT: %.2f\n", towar.nazwa, towar.cenaBrutto, towar.stawkaVAT);
+    printf("Nazwa: %s\nCena brutto: %.2f PLN\nStawka VAT: %.2f%%\n", towar.nazwa, towar.cenaBrutto, towar.stawkaVAT);
 }
 
 void nazwanieTowaru(Towar *towar, char *tekst)
@@ -75,4 +94,13 @@ void nazwanieTowaru(Towar *towar, char *tekst)
     {
         towar->nazwa[i] = tekst[i];
     }
+}
+
+double cenaNetto(const Towar *towar)
+{
+    return ( (towar->cenaBrutto) / (1+ (towar->stawkaVAT/100)) );
+}
+double kwotaVAT(const Towar *towar)
+{
+    return (towar->cenaBrutto - cenaNetto(towar));
 }
