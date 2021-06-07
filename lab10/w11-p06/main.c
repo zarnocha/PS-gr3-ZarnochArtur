@@ -29,16 +29,19 @@ int main(int argc, char *argv[])
     {
         fprintf(stderr, "Nie mozna otworzyc pliku docelowego.\n\n");
         printf("Tworze nowy plik docelowy.\n");
+        fclose(wp1);
     }
 
     wp1 = fopen(argv[2], "w+");
 
     //fgets(wiersz, MAXWIERSZ, wp); //na fread
-    fread(wp, 512, 512, wiersz);
-    fclose(wp);
+    fread(&wiersz, 1, MAXWIERSZ, wp);
+    //fclose(wp);
 
     //fputs(wiersz, wp1); //na fwrite
-    fwrite(wiersz, 512, 512, wp1);
+
+    fwrite(&wiersz, 1, MAXWIERSZ, wp1);
+
     fclose(wp1);
 
     printf("\nKopiowanie zakonczone sukcesem.\n");

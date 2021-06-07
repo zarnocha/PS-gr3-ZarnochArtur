@@ -11,6 +11,7 @@
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
+				<Option parameters='w11-p05.c &quot;C:\GitHub\Programowanie_strukturalne\PS-gr3-ZarnochArtur\lab10\w11-p06\w11-p05.c&quot;' />
 				<Compiler>
 					<Add option="-g" />
 				</Compiler>
