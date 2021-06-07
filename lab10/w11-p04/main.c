@@ -11,7 +11,7 @@ int main(int argc, char *argv[])
         exit(1);
     }
 
-    for(int i=1; i<argc-1; i++)
+    for(int i=1; i<argc-1; i+=2)
     {
         wp = fopen(argv[i], "r");
         if (wp == NULL)
