@@ -33,11 +33,9 @@ int main(int argc, char *argv[])
             exit(4);
         }
 
-        printf("Wielkosc podanego pliku w bajtach: %ld\n", len);
+        printf("Wielkosc %s w bajtach: %ld\n", argv[i], len);
         fclose(fp);
     }
-
-
     return 0;
 }
 

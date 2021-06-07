@@ -22,11 +22,6 @@ int main(int argc, char *argv[])
 
         int ch;
 
-        /*while ((ch = fgetc(wp)) != EOF)
-        {
-            fputc(ch, stdout);
-            ++licznik;
-        }*/
         wp1 = fopen(argv[i+1], "r");
         if (wp1 == NULL)
         {
