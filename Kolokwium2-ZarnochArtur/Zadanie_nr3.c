@@ -27,5 +27,12 @@ int main()
     printf("Maly napis: %s\n", napis);
     upper(napis);
     printf("Duzy napis: %s\n", napis);
+
+    char napis1[1024] = "CzY PowieKszaNie NaPisU dZiaLa?";
+    printf("\nMaly napis1: %s\n", napis1);
+    upper(napis1);
+    printf("Duzy napis1: %s\n", napis1);
+
+
     return 0;
 }
