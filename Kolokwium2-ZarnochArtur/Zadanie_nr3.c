@@ -13,7 +13,7 @@ void upper(char *napis)
     int i = 0;
     while(napis[i] != 0)
     {
-        if(napis[i] >= 97 && napis[i]<=122)
+        if(napis[i] >= 97 && napis[i] <= 122)
 		{
 			napis[i] = napis[i] - 32;
 		}

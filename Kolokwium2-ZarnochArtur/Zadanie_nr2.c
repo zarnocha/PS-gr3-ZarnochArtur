@@ -30,6 +30,19 @@ void show(short tab[], int n)
 	}
 }
 
+void odwroc(short tab[], int lewy, int prawy)
+{
+	int temp;
+	int roznica = prawy-lewy+1;
+
+    for(int i = lewy, j = prawy; i < roznica; i++, j--)
+    {
+		temp = *(tab+i);
+		*(tab+i) = *(tab+j);
+		*(tab+j) = temp;
+    }
+}
+
 int main()
 {
 	int n;
@@ -48,7 +61,13 @@ int main()
 	}
 
 	short tab[N];
+
 	generacja_tablicy(tab, n);
 	show(tab, n);
+
+	odwroc(tab, 1, 5);
+	printf("\n");
+	show(tab, n);
+
     return 0;
 }
