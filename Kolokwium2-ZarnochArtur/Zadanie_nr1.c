@@ -21,7 +21,7 @@ Napisz program testujący napisane funkcje.
 */
 
 typedef struct Produkt{
-	char *nazwa;
+	char nazwa[MAX_LEN];
 	double cenaBrutto;
 	float stawkaVAT;
 } Produkt;
@@ -29,7 +29,7 @@ typedef struct Produkt{
 Produkt makeProdukt(const char *nazwa, double cenaBrutto, float stawkaVAT)
 {
 	Produkt temp;
-	temp.nazwa = (char*)malloc(MAX_LEN);
+	//temp.nazwa = (char*)malloc(MAX_LEN);
 	strcpy(temp.nazwa, nazwa);
 	temp.cenaBrutto = cenaBrutto;
 	temp.stawkaVAT = stawkaVAT;
@@ -38,21 +38,21 @@ Produkt makeProdukt(const char *nazwa, double cenaBrutto, float stawkaVAT)
 
 Produkt makeProdukt1(const Produkt *produkt)
 {
-	Produkt pr;
+	/*Produkt pr;
 	pr.nazwa = produkt->nazwa;
 	pr.cenaBrutto = produkt->cenaBrutto;
-	pr.stawkaVAT = produkt->stawkaVAT;
-	return pr;
+	pr.stawkaVAT = produkt->stawkaVAT;*/
+	return *produkt;
 }
 
-void show(const Produkt *produkt)
+/*void show1(const Produkt *produkt)
 {
 	printf("\nNazwa: %s", produkt->nazwa);
 	printf("\nCena brutto: %0.2f", produkt->cenaBrutto);
 	printf("\nStawka VAT: %0.2f", produkt->stawkaVAT);
-}
+}*/
 
-void show1(const Produkt produkt)
+void show(const Produkt produkt)
 {
 	printf("\nNazwa: %s", produkt.nazwa);
 	printf("\nCena brutto: %0.2f", produkt.cenaBrutto);
@@ -71,31 +71,33 @@ double kwotaVAT(const Produkt *produkt)
 
 int main()
 {
-	Produkt pr1 = makeProdukt("Produkt1", 66.70, 23);
+	Produkt pr1 = makeProdukt("Produkt 1", 66.70, 23);
 
-	Produkt *pr_temp = malloc(sizeof(Produkt));
+	/*Produkt *pr_temp = malloc(sizeof(Produkt));
 	pr_temp->nazwa = "Produkt2";
 	pr_temp->cenaBrutto = 75.20;
-	pr_temp->stawkaVAT = 11;
+	pr_temp->stawkaVAT = 11;*/
 
-	Produkt pr2 = makeProdukt1(pr_temp);
+	Produkt pr2 = makeProdukt1(&pr1);		//zapomnialem o mozliwosci dodania ampersanda do argumentu
+	strcpy(pr2.nazwa, "Produkt 2");
+	pr2.cenaBrutto = 23.30;
+	pr2.stawkaVAT = 11;
+	//pr_temp->nazwa = "Produkt temp";
 
-	pr_temp->nazwa = "Produkt temp";
-
-	show1(pr1);
+	show(pr1);
 	printf("\n");
 
-	show1(pr2);
+	show(pr2);
 	printf("\n");
 
-	show(pr_temp);
+	//show1(pr_temp);
 	printf("\n");
 
-	double Netto = cenaNetto(pr_temp);
-	double VAT = kwotaVAT(pr_temp);
+	double Netto = cenaNetto(&pr2);
+	double VAT = kwotaVAT(&pr2);
 
-	printf("\nCena netto pr_temp: %f", Netto);
-	printf("\nKwota VAT pr_temp: %f\n", VAT);
+	printf("Cena netto pr2: %f", Netto);
+	printf("\nKwota VAT pr2: %f\n", VAT);
 
 
     return 0;
